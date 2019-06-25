@@ -1,0 +1,485 @@
+// Sass Breakpoint Mixin
+@mixin breakpoint($point) {
+  @if $point == p576 {
+    @media (min-width: 576px) {
+      @content;
+    }
+  } @else if $point == p768 {
+    @media (min-width: 768px) {
+      @content;
+    }
+  } @else if $point == p992 {
+    @media (min-width: 992px) {
+      @content;
+    }
+  } @else if $point == p1200 {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  } @else if $point { // allows custom breakpoints
+    @media (min-width: $point) {
+      @content;
+    }
+  }
+}
+
+// Customization Bootstrap vars from "app/libs/bootstrap/scss/_variables.scss ,only before @import bootstrap variables!"
+$grid-gutter-width: 30px;
+$grid-columns: 12;
+$grid-breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px);
+$container-max-widths: (sm: 540px, md: 720px, lg: 960px, xl: 1170px);
+
+$gutter: $grid-gutter-width;
+@import 'fonts';
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+@import 'reset';
+
+//@import '../../node_modules/bootstrap/scss/bootstrap-grid.scss';
+//@import '../../node_modules/bootstrap/scss/variables';
+
+
+body {
+  min-width: 320px;
+  height: 100%;
+  font-size: 16px;
+  background-color: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, svg {
+  display: block;
+}
+
+.bg-layout-cover {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+/* input-placeholder */
+input::-webkit-input-placeholder {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+input::-moz-placeholder {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+input:-ms-input-placeholder {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+input:focus::-webkit-input-placeholder {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+input:focus::-moz-placeholder {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+input:focus:-ms-input-placeholder {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+textarea::-webkit-input-placeholder {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+textarea::-moz-placeholder {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+textarea:-ms-input-placeholder {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+textarea:focus::-webkit-input-placeholder {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+textarea:focus::-moz-placeholder {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+textarea:focus:-ms-input-placeholder {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button,
+input::-webkit-search-results-button,
+input::-webkit-search-results-decoration {
+  display: none;
+}
+
+body {
+  font-family: 'Righteous', Sans-Serif;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #ffffff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0;
+}
+
+/*-----header-------*/
+.header {
+  max-width: 1200px;
+  height: 64px;
+  background-color: #242424;
+
+}
+
+.search-block, .login-block {
+  position: relative;
+  width: 60px;
+  height: 64px;
+  box-shadow: 0 0 7px rgba(21, 30, 25, 0.79);
+  background-color: #242424;
+  cursor: pointer;
+
+  svg {
+    position: absolute;
+    top: 50%;
+    margin-top: -8.5px;
+    left: 50%;
+    margin-left: -8.5px;
+  }
+
+  .search {
+    width: 16px;
+    height: 17px;
+  }
+
+  .login {
+    width: 17px;
+    height: 17px;
+  }
+}
+
+.login-block {
+  margin-right: -15px;
+}
+
+.logo-block {
+  .logo {
+    width: 13px;
+    height: 18px;
+    margin-right: 15px;
+  }
+
+  .text-logo {
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+}
+
+.menu {
+  position: relative;
+}
+
+.menu-block {
+  position: relative;
+}
+
+.menu-button {
+  padding: 25px 24px;
+  box-shadow: 0 0 7px rgba(21, 30, 25, 0.79);
+  display: block;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.list {
+  display: none;
+  padding-left: 13px;
+  padding-right: 20px;
+  position: absolute;
+  z-index: 9;
+  top: 65px;
+  left: -61px;
+  box-shadow: 0 0 7px rgba(36, 36, 36, 0.29);
+  background-color: #ffffff;
+
+  .list-item {
+    position: relative;
+    padding: 14px 0;
+    padding-left: 42px;
+    padding-right: 20px;
+    cursor: pointer;
+
+    a {
+      text-transform: uppercase;
+      font-size: 10px;
+      font-weight: 400;
+    }
+  }
+
+  .list-item:before {
+    left: 0;
+  }
+
+  .list-item:after {
+    content: '';
+    position: absolute;
+    width: 125px;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    background-color: #242424;
+    opacity: 0.1;
+  }
+
+  .list-item:last-child:after {
+    display: none;
+  }
+
+  .facebook:before {
+    position: absolute;
+    content: '';
+    background: url("../img/sprite.png") -22px 0px;
+    width: 17px;
+    height: 17px;
+  }
+
+  .twitter:before {
+    position: absolute;
+    content: '';
+    background: url("../img/sprite.png") 17px 0px;
+    width: 17px;
+    height: 17px;
+  }
+
+  .google:before {
+    position: absolute;
+    content: '';
+    background: url("../img/sprite.png") 39px 0px;
+    width: 17px;
+    height: 17px;
+  }
+
+  .pinterest:before {
+    position: absolute;
+    content: '';
+    background: url("../img/sprite.png") 0px 0px;
+    width: 17px;
+    height: 17px;
+  }
+}
+
+.open {
+  display: block;
+}
+
+.active {
+  box-shadow: 0 0 7px rgba(36, 36, 36, 0.29);
+  background-color: #1b1b1b;
+}
+
+/*------------------*/
+/*----main----------*/
+.grid {
+  width: 100%;
+  margin-top: 30px;
+}
+
+
+.item {
+  margin-bottom: 80px;
+  position: relative;
+  font-family: 'Philosopher', Sans-Serif;
+
+  a {
+    display: block;
+    position: relative;
+    cursor: default;
+
+    img {
+      width: 100%;
+      height: auto;
+      /*max-width: 100%;*/
+      margin-bottom: 30px;
+    }
+  }
+
+  a:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+    background: #242424;;
+    opacity: 0;
+  }
+
+  a:hover:after {
+    opacity: 0.7;
+    z-index: 2;
+  }
+}
+
+.date-block {
+  padding-left: 22px;
+  padding-bottom: 18px;
+  display: flex;
+
+  .date {
+    margin-right: 18px;
+  }
+
+  .date, .comments {
+    position: relative;
+    padding-left: 20px;
+    font-size: 11px;
+    font-weight: 400;
+    color: #9d9d9d;
+    cursor: pointer;
+
+  }
+
+  .date:before {
+    content: "";
+    left: 0;
+    top: 0;
+    position: absolute;
+    width: 11px;
+    height: 11px;
+    background: url('../img/calendar.png') no-repeat 50% 50%;
+  }
+
+  .comments:before {
+    content: "";
+    left: 0;
+    top: 0;
+    position: absolute;
+    width: 11px;
+    height: 11px;
+    background: url('../img/comments.png') no-repeat 50% 50%;
+  }
+}
+
+.title {
+  padding: 0 20px;
+  padding-bottom: 20px;
+  text-align: left;
+  color: #242424;
+  font-size: 22px;
+  line-height: 26px;
+  font-weight: 700;
+}
+
+.text {
+  position: relative;
+  padding: 0 20px;
+  color: #242424;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+}
+
+.text:last-child {
+  padding-bottom: 33px;
+}
+
+.text:last-child:after {
+  content: '';
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  background-color: #41e9ff;
+  height: 6px;
+  max-width: 370px;
+  width: 100%;
+}
+
+.load {
+  width: 174px;
+  height: 53px;
+  margin-bottom: 46px;
+  border: 3px solid #41e9ff;
+  color: #41e9ff;
+  background: transparent;
+  font-size: 18px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.more {
+  display: none;
+  position: absolute;
+  line-height: 48px;
+  text-align: center;
+  font-family: 'Righteous', Sans-Serif;
+  top:calc(50% - 26.5px);
+  left:calc(50% - 87px);;
+  z-index: 5;
+  cursor: pointer;
+
+}
+a:hover .more {
+  display: block;
+}
+
+@media all and (max-width: 576px) {
+  .menu-button {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .text:last-child:after {
+
+    max-width: 100%;
+  }
+
+}
+
+@media all and (max-width: 768px) {
+  .list {
+    left: -79px;
+  }
+  .item {
+    margin-bottom: 40px;
+
+    img {
+      margin-bottom: 10px;
+    }
+
+    .date-block {
+      padding-bottom: 14px;
+    }
+
+    .title {
+      padding-bottom: 14px;
+      font-size: 18px;
+      line-height: 22px;
+    }
+  }
+}
+
+/*------------------*/

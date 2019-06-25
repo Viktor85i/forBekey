@@ -1,0 +1,51 @@
+//@font-face {
+//  font-family: 'PTSerifItalic';
+//  src: url('../fonts/PTSerifItalic.eot');
+//  src: url('../fonts/PTSerifItalic.eot?#iefix') format('embedded-opentype'),
+//  url('../fonts/PTSerifItalic.woff') format('woff'),
+//  url('../fonts/PTSerifItalic.ttf') format('truetype');
+//  font-weight: normal;
+//  font-style: normal;
+//
+//}
+@font-face {
+  font-family: 'Righteous';
+  src: url('../fonts/Righteous-Regular.woff2') format('woff2'),
+  url('../fonts/Righteous-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Philosopher';
+  src: url('../fonts/Philosopher-Bold.woff2') format('woff2'),
+  url('../fonts/Philosopher-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Philosopher';
+  src: url('../fonts/Philosopher-Regular.woff2') format('woff2'),
+  url('../fonts/Philosopher-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Philosopher';
+  src: url('../fonts/Philosopher-BoldItalic.woff2') format('woff2'),
+  url('../fonts/Philosopher-BoldItalic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Philosopher';
+  src: url('../fonts/Philosopher-Italic.woff2') format('woff2'),
+  url('../fonts/Philosopher-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
+
+
+
